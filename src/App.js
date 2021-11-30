@@ -1,7 +1,9 @@
-//import Footer from "./components/footer";
-//import Ofertas from "./components/ofertas";
-//import Ofertona from "./components/ofertona";
-//import Ofertinhas from "./components/ofertinhas";
+import './global.css'
+
+import Footer from "./components/footer";
+import Ofertas from "./components/ofertas";
+import Ofertona from "./components/ofertona";
+import Ofertinhas from "./components/ofertinhas";
 import { useEffect, useState } from "react";
 import Button from "./components/button";
 import Filtro from "./components/filtro-cardapio";
@@ -19,10 +21,15 @@ function App() {
 
   return (
     <>
+      
       <Filtro categories={categories}/>
       <Button text="Entrar"/>
       <Button text="Cadastrar"/>
       <Button text="Criar conta"/>
+      <Ofertona />
+      <Ofertas />
+      <Ofertinhas />
+      <Footer />
     </>
   );
 }

@@ -5,7 +5,6 @@ export const Container = styled.div `
     width: 72.813rem;
     height: 5.563rem;
     align-content: center;
-    margin: auto 0 auto;
     display: flex;
     margin: 11.313rem auto 0 auto;
     justify-content: space-between;
@@ -19,8 +18,6 @@ export const Container = styled.div `
         min-width: 12.5rem;
         background-color: #B6A8FF;
         cursor: pointer;
-        font-family: Roboto;
-        font-style: normal;
         font-weight: bold;
         font-size: 1.25rem;
         line-height: 1.125rem;

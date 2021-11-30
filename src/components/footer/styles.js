@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
-    position: absolute;
     width: 100%;
     height: 6.5rem;
     left: 0px;
-    top: 121.43rem;
     display: flex;
     justify-content: space-around;
     padding-top: 2.48rem;
