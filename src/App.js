@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Button from "./components/button";
 import Filtro from "./components/filtro-cardapio";
 import { api } from "./services/api"
+import Banner from './components/banner-combos';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <>
-      
+      <Banner />
       <Filtro categories={categories}/>
       <Button text="Entrar"/>
       <Button text="Cadastrar"/>
