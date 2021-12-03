@@ -22,15 +22,15 @@ function App() {
 
   return (
     <>
-      <Banner />
+      
       <Filtro categories={categories}/>
-      <Button text="Entrar"/>
+      {/* <Button text="Entrar"/>
       <Button text="Cadastrar"/>
-      <Button text="Criar conta"/>
+      <Button text="Criar conta"/> */}
       <Ofertona />
-      <Ofertas />
-      <Ofertinhas />
-      <Footer />
+      <Ofertas /> 
+      <Ofertinhas /> 
+      {/* <Footer />*/}
     </>
   );
 }

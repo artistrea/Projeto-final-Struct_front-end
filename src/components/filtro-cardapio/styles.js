@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 export const Container = styled.div `
     position: relative;
-    width: 72.813rem;
-    height: 5.563rem;
-    align-content: center;
+    max-width: 72.813rem;
+    min-height: 5.563rem;
     display: flex;
-    margin: 11.313rem auto 0 auto;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
+    place-content: center;
+    flex-wrap: wrap;
+    margin: 11.313rem 10vw 0 10vw;
+    padding: 0 1rem;
     background: #B6A8FF;
     border-radius: 0px 52px 52px 52px;
 
     button {
-        min-width: 12.5rem;
+        height: 5.563rem;
+        width: 12.5rem;
+        margin: 0 auto;
         background-color: #B6A8FF;
         cursor: pointer;
         font-weight: bold;
@@ -28,5 +28,12 @@ export const Container = styled.div `
 
     button:hover {
         background-color: #8172D3;
+    }
+
+    @media only screen and (max-width: 480px) {
+        width: 13rem;
+        button {
+        height: 3.563rem;
+        }
     }
 `;

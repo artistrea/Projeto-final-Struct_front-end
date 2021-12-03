@@ -6,7 +6,7 @@ const Ofertona = () => {
     return (
         <Container>
             <div>
-                <p>ofertona</p>
+                <img src="https://wallpaperaccess.com/full/699724.jpg" alt="ofertona" />
             </div>
         </Container>
         

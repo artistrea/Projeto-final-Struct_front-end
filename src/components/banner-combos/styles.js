@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-flow: wrap;
-    width: 72.813rem;
-    height: 22.8rem;
+    max-width: 72.813rem;
+    min-height: 22.8rem;
     background: #87C6EA;
     margin: 1.875rem auto 0;
     position: relative;
@@ -21,13 +21,13 @@ export const Container = styled.div`
 
     .slogan {
         border-radius: 0 0 20px 20px;
-        position: absolute;
-        width: 72.813rem;
-        height: 3.25rem;
+        position: relative;
+        justify-self: flex-end;
+        width: 100%;
+        min-height: 3.25rem;
         background: #705B7E;
         bottom: 0;
         text-align: center;
-        font-family: Roboto;
         font-weight: bold;
         font-size: 24px;
         color: #FFFFFF;

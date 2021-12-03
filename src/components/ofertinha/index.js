@@ -3,11 +3,9 @@ import { Container } from "./styles"
 const Ofertinha = () => {
     return (
         <Container>
-            <div>
-                <img src="https://derodecor.vteximg.com.br/arquivos/ids/196217-undefined-undefined/PP324-1.16M_12.jpg?v=636935332401900000" alt="oferta"></img>
+            <img src="https://st2.depositphotos.com/3957801/5642/i/600/depositphotos_56423065-stock-photo-bacon-burger.jpg" alt="oferta"></img>
 
-                <p>Texto</p>
-            </div>
+            <p>Texto</p>
         </Container>
     )
 }
