@@ -15,28 +15,4 @@ export const Container = styled.footer`
         font-size: 2.5rem;
         font-weight: bold;
     }
-
-    @media only screen and (max-width: 1220px) {
-        div {
-            font-size: 1.8rem;
-        }
-    }
-
-    @media only screen and (max-width: 900px) {
-        div {
-            font-size: 1.3rem;
-        }
-    }
-
-    @media only screen and (max-width: 680px) {
-        div {
-            font-size: 1rem;
-        }
-    }
-
-    @media only screen and (max-width: 550px) {
-        div {
-            width: 100%;
-        }
-    }
 `;

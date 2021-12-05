@@ -9,9 +9,6 @@ import Button from "./components/button";
 import Filtro from "./components/filtro-cardapio";
 import { api } from "./services/api"
 import Banner from './components/banner-combos';
-import Perfil from './components/foto-perfil';
-import Imagem from './components/imagem';
-import ImagemR from './components/imagem-responsiva';
 
 function App() {
 
@@ -26,17 +23,14 @@ function App() {
   return (
     <>
       
-      {/* <Filtro categories={categories}/> */}
-      <Imagem />
-      <ImagemR />
-      {/* <Perfil />
-      <Button text="Entrar"/>
+      <Filtro categories={categories}/>
+      {/* <Button text="Entrar"/>
       <Button text="Cadastrar"/>
-      <Button text="Criar conta"/> 
+      <Button text="Criar conta"/> */}
       <Ofertona />
       <Ofertas /> 
-      <Ofertinhas />  */}
-      <Footer />
+      <Ofertinhas /> 
+      {/* <Footer />*/}
     </>
   );
 }
