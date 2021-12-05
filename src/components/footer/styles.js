@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
-    position: absolute;
-    bottom: 0;
     width: 100%;
     min-height: 6.5rem;
     left: 0px;
