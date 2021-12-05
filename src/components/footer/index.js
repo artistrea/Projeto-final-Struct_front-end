@@ -7,7 +7,7 @@ const Footer = () => {
         <Container>
             <div>Redes sociais</div>
             <div>Trabalhe conosco</div>
-            <div>informações legais</div>
+            <div>Informações legais</div>
         </Container>
     )
 }
