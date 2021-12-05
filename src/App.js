@@ -1,4 +1,5 @@
 import './global.css'
+import ''
 
 import Footer from "./components/footer";
 import Ofertas from "./components/ofertas";
@@ -12,6 +13,8 @@ import Banner from './components/banner-combos';
 import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
+import AdmSidebar from './components/adm-sidebar';
+import { UserProvider } from './context/useUserContext';
 
 function App() {
 
@@ -23,20 +26,24 @@ function App() {
     })
   }, [])
 
+  
   return (
     <>
+      <UserProvider>
+        <AdmSidebar />
+      </UserProvider>
       
-      {/* <Filtro categories={categories}/> */}
+      {/* <Filtro categories={categories}/>
       <Imagem />
       <ImagemR />
-      {/* <Perfil />
+      <Perfil />
       <Button text="Entrar"/>
       <Button text="Cadastrar"/>
       <Button text="Criar conta"/> 
       <Ofertona />
       <Ofertas /> 
-      <Ofertinhas />  */}
-      <Footer />
+      <Ofertinhas /> 
+      <Footer /> */}
     </>
   );
 }
