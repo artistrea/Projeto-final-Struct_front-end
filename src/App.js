@@ -1,17 +1,18 @@
 import './global.css'
+import { useEffect, useState } from "react";
+import { api } from "./services/api"
 
 import Footer from "./components/footer";
 import Ofertas from "./components/ofertas";
 import Ofertona from "./components/ofertona";
 import Ofertinhas from "./components/ofertinhas";
-import { useEffect, useState } from "react";
 import Button from "./components/button";
 import Filtro from "./components/filtro-cardapio";
-import { api } from "./services/api"
 import Banner from './components/banner-combos';
 import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
+import {Pratos} from './components/pratos';
 
 function App() {
 
@@ -23,20 +24,28 @@ function App() {
     })
   }, [])
 
+
+  const [meals, setMeals] = useState([])
+  useEffect(() => {
+    api.get('/meals/index').then((response) => {
+      setMeals(response.data)
+    })
+  }, [])
+
   return (
     <>
-      
-      {/* <Filtro categories={categories}/> */}
-      <Imagem />
+      <Filtro categories={categories}/> 
+      <Pratos meals={meals}/>
+      {/* <Imagem />
       <ImagemR />
-      {/* <Perfil />
+      <Perfil />
       <Button text="Entrar"/>
       <Button text="Cadastrar"/>
       <Button text="Criar conta"/> 
       <Ofertona />
       <Ofertas /> 
-      <Ofertinhas />  */}
-      <Footer />
+      <Ofertinhas /> 
+      <Footer /> */}
     </>
   );
 }
