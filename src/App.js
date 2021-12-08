@@ -14,6 +14,7 @@ import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
 import {Pratos} from './components/pratos';
 import GridCategories from './components/grid-categories';
+import GridMeals from './components/grid-meals';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <>
+      <GridMeals meals={meals}/>
       <GridCategories categories={categories}/>
       {/* <Filtro categories={categories}/> 
       <Pratos meals={meals}/>

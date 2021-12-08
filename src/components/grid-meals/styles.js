@@ -34,16 +34,20 @@ export const Container = styled.div`
 `;
 
 export const Item = styled.table` 
-    height: 3rem;
+    height: 7rem;
     width: 100%;
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-content: center;
     text-align: center;
+    
 
     tr {
-        width: 33.33%;
+        height: 100%;
+        width: 20%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     :hover {
@@ -51,7 +55,7 @@ export const Item = styled.table`
         }
     
     img {
-        height: 100%;
+        height: 50%;
         margin: 0 1rem;
         :hover {
             cursor: pointer;

@@ -5,11 +5,11 @@ import Trash from "./../../imgs/trash.png"
 
 
 
-const GridCategories = ({categories}) => {
-    const DeleteCat = async (category,event) => {
-        const confirmacao = prompt(`Digite \"DELETAR\" caso realmente queira deletar a categoria ${category.name}`)
+const GridMeals = ({meals}) => {
+    const DeleteCat = async (meal,event) => {
+        const confirmacao = prompt(`Digite \"DELETAR\" caso realmente queira deletar a categoria ${meal.name}`)
         if (confirmacao === "DELETAR"){
-            await api.delete(`/categories/delete/${category.id}`)
+            await api.delete(`/meals/delete/${meal.id}`)
                 .then((response) => {
                     alert(response.data)
                 }).catch((error) => {
@@ -21,20 +21,24 @@ const GridCategories = ({categories}) => {
 
     return (
         <Container>
-            <h1>Categorias</h1>
+            <h1>Pratos</h1>
             <Item>
-                <tr>ID</tr>
                 <tr>NOME</tr>
+                <tr>PREÇO</tr>
+                <tr>ID DA CATEGORIA</tr>
+                <tr>DESCRIÇÃO</tr>
                 <tr>OPÇÕES</tr>
             </Item>
-            {categories.map( (category) => (
+            {meals.map( (meal) => (
                 <Item>
-                    <tr>{category.id}</tr>
-                    <tr>{category.name}</tr>
+                    <tr>{meal.name}</tr>
+                    <tr>{(meal.price).toFixed(2)}</tr>
+                    <tr>{meal.category_id}</tr>
+                    <tr>{meal.description}</tr>
                     <tr>
                         {/* transformar de <a> para <Link> */}
                         <a><img src={EditPencil} alt="Edit"></img></a>
-                        <img onClick={() => DeleteCat(category)} src={Trash} alt="Delete"></img>
+                        <img onClick={() => DeleteCat(meal)} src={Trash} alt="Delete"></img>
                     </tr>
                 </Item>
             ))}
@@ -42,4 +46,4 @@ const GridCategories = ({categories}) => {
     )
 }
 
-export default GridCategories
+export default GridMeals
