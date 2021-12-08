@@ -1,5 +1,4 @@
 import './global.css'
-import ''
 
 import Footer from "./components/footer";
 import Ofertas from "./components/ofertas";
@@ -14,7 +13,6 @@ import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
 import AdmSidebar from './components/adm-sidebar';
-import { UserProvider } from './context/useUserContext';
 
 function App() {
 
@@ -29,9 +27,7 @@ function App() {
   
   return (
     <>
-      <UserProvider>
-        <AdmSidebar />
-      </UserProvider>
+      <AdmSidebar user={{name: "Artur", email: "arturo8879arturo8879arturo8879@gmail.com"}}/>
       
       {/* <Filtro categories={categories}/>
       <Imagem />

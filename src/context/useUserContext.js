@@ -1,23 +1,23 @@
-import { createContext, useContext } from "react";
+// import { createContext, useContext } from "react";
 
-const UserContext = createContext({});
+// const UserContext = createContext({});
 
 
 
-const UserProvider = ({children}) => {
+// const UserProvider = ({children}) => {
 
-    const [user, setUser] = useState(undefined);
+//     const [user, setUser] = useState(undefined);
 
-    return (
-        <UserContext.Provider>
-            {children}
-        </UserContext.Provider>
-    );
-}
+//     return (
+//         <UserContext.Provider>
+//             {children}
+//         </UserContext.Provider>
+//     );
+// }
 
-const useUserContext = () => {
-    const context = useContext(UserContext)
-    return context
-}
+// const useUserContext = () => {
+//     const context = useContext(UserContext)
+//     return context
+// }
 
-export {UserProvider, useUserContext}
+// export {UserProvider, useUserContext}
