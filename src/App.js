@@ -13,6 +13,7 @@ import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
 import {Pratos} from './components/pratos';
+import GridCategories from './components/grid-categories';
 
 function App() {
 
@@ -34,9 +35,10 @@ function App() {
 
   return (
     <>
-      <Filtro categories={categories}/> 
+      <GridCategories categories={categories}/>
+      {/* <Filtro categories={categories}/> 
       <Pratos meals={meals}/>
-      {/* <Imagem />
+      <Imagem />
       <ImagemR />
       <Perfil />
       <Button text="Entrar"/>
