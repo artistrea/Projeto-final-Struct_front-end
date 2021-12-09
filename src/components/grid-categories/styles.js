@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.table`
     display: flex;
     flex-direction: column;
     width: 54.5rem;
@@ -9,6 +9,10 @@ export const Container = styled.div`
     align-items: center;
     overflow-y: scroll;
     border-radius: 0px 50px 50px 0px;
+
+    tbody{
+        width: 100%;
+    }
     
     ::-webkit-scrollbar {
         width: 3rem;
@@ -33,7 +37,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Item = styled.table` 
+export const Item = styled.tr` 
     height: 3rem;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -42,7 +46,7 @@ export const Item = styled.table`
     align-content: center;
     text-align: center;
 
-    tr {
+    td {
         width: 33.33%;
     }
 

@@ -21,23 +21,27 @@ const GridCategories = ({categories}) => {
 
     return (
         <Container>
-            <h1>Categorias</h1>
-            <Item>
-                <tr>ID</tr>
-                <tr>NOME</tr>
-                <tr>OPÇÕES</tr>
-            </Item>
-            {categories.map( (category) => (
+            <thead>
+                <tr><td><h1>Categorias</h1></td></tr>
+            </thead>
+            <tbody>
                 <Item>
-                    <tr>{category.id}</tr>
-                    <tr>{category.name}</tr>
-                    <tr>
-                        {/* transformar de <a> para <Link> */}
-                        <a><img src={EditPencil} alt="Edit"></img></a>
-                        <img onClick={() => DeleteCat(category)} src={Trash} alt="Delete"></img>
-                    </tr>
+                    <td>ID</td>
+                    <td>NOME</td>
+                    <td>OPÇÕES</td>
                 </Item>
-            ))}
+                {categories.map( (category, index) => (
+                    <Item key={index}>
+                        <td>{category.id}</td>
+                        <td>{category.name}</td>
+                        <td>
+                            {/* transformar de <a> para <Link> */}
+                            <a><img src={EditPencil} alt="Edit"></img></a>
+                            <img onClick={() => DeleteCat(category)} src={Trash} alt="Delete"></img>
+                        </td>
+                    </Item>
+                ))}
+            </tbody>
         </Container>
     )
 }

@@ -21,27 +21,31 @@ const GridMeals = ({meals}) => {
 
     return (
         <Container>
-            <h1>Pratos</h1>
-            <Item>
-                <tr>NOME</tr>
-                <tr>PREÇO</tr>
-                <tr>ID DA CATEGORIA</tr>
-                <tr>DESCRIÇÃO</tr>
-                <tr>OPÇÕES</tr>
-            </Item>
-            {meals.map( (meal) => (
+            <thead>
+                <tr><td><h1>Pratos</h1></td></tr>
+            </thead>
+            <tbody>
                 <Item>
-                    <tr>{meal.name}</tr>
-                    <tr>{(meal.price).toFixed(2)}</tr>
-                    <tr>{meal.category_id}</tr>
-                    <tr>{meal.description}</tr>
-                    <tr>
-                        {/* transformar de <a> para <Link> */}
-                        <a><img src={EditPencil} alt="Edit"></img></a>
-                        <img onClick={() => DeleteCat(meal)} src={Trash} alt="Delete"></img>
-                    </tr>
+                    <td>NOME</td>
+                    <td>PREÇO</td>
+                    <td>ID DA CATEGORIA</td>
+                    <td>DESCRIÇÃO</td>
+                    <td>OPÇÕES</td>
                 </Item>
-            ))}
+                {meals.map( (meal, index) => (
+                    <Item key={index}>
+                        <td>{meal.name}</td>
+                        <td>{(meal.price).toFixed(2)}</td>
+                        <td>{meal.category_id}</td>
+                        <td>{meal.description}</td>
+                        <td>
+                            {/* transformar de <a> para <Link> */}
+                            <a><img src={EditPencil} alt="Edit"></img></a>
+                            <img onClick={() => DeleteCat(meal)} src={Trash} alt="Delete"></img>
+                        </td>
+                    </Item>
+                ))}
+            </tbody>
         </Container>
     )
 }
