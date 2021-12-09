@@ -7,7 +7,7 @@ import Trash from "./../../imgs/trash.png"
 
 const GridMeals = ({meals}) => {
     const DeleteCat = async (meal,event) => {
-        const confirmacao = prompt(`Digite \"DELETAR\" caso realmente queira deletar a categoria ${meal.name}`)
+        const confirmacao = prompt(`Digite \"DELETAR\" caso realmente queira deletar o prato ${meal.name}`)
         if (confirmacao === "DELETAR"){
             await api.delete(`/meals/delete/${meal.id}`)
                 .then((response) => {
@@ -16,7 +16,7 @@ const GridMeals = ({meals}) => {
                     alert(error.message)
                 })
         }
-        else {alert("Categoria NÃO foi deletada")}  
+        else {alert("O prato NÃO foi deletado")}  
     }
 
     return (
@@ -26,19 +26,19 @@ const GridMeals = ({meals}) => {
             </thead>
             <tbody>
                 <Item>
-                    <td>NOME</td>
-                    <td>PREÇO</td>
-                    <td>ID DA CATEGORIA</td>
-                    <td>DESCRIÇÃO</td>
-                    <td>OPÇÕES</td>
+                    <td class="name">NOME</td>
+                    <td class="price">PREÇO</td>
+                    <td class="cat-id">ID DA CATEGORIA</td>
+                    <td class="descriptiom">DESCRIÇÃO</td>
+                    <td class="options">OPÇÕES</td>
                 </Item>
                 {meals.map( (meal, index) => (
                     <Item key={index}>
-                        <td>{meal.name}</td>
-                        <td>{(meal.price).toFixed(2)}</td>
-                        <td>{meal.category_id}</td>
-                        <td>{meal.description}</td>
-                        <td>
+                        <td class="name">{meal.name}</td>
+                        <td class="price">{(meal.price).toFixed(2)}</td>
+                        <td class="cat-id">{meal.category_id}</td>
+                        <td class="description">{meal.description}</td>
+                        <td class="options">
                             {/* transformar de <a> para <Link> */}
                             <a><img src={EditPencil} alt="Edit"></img></a>
                             <img onClick={() => DeleteCat(meal)} src={Trash} alt="Delete"></img>

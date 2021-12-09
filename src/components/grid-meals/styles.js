@@ -16,6 +16,13 @@ export const Container = styled.table`
     
     ::-webkit-scrollbar {
         width: 3rem;
+        overflow: hidden;
+        background: rgba(199, 255, 255);
+        border-radius: 0px 50px 50px 0px;
+    }
+
+    ::-webkit-scrollbar-corner{
+        display: none;
     }
 
     /* Track */
@@ -34,7 +41,14 @@ export const Container = styled.table`
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
         background-color: rgba(109, 205, 255, 0.95);
+        overflow: hidden;
     }
+    @media only screen and (max-width: 55rem){
+        width: 90%;
+        height: 100vh;
+        margin: 0;
+        overflow-x: scroll;
+    }   
 `;
 
 export const Item = styled.tr` 
@@ -59,11 +73,33 @@ export const Item = styled.tr`
         }
     
     img {
-        height: 50%;
-        margin: 0 1rem;
+        height: 45%;
+        max-width: 100%;
+        margin: 0 2.5%;
         :hover {
             cursor: pointer;
         }
     }
-    
+
+    @media only screen and (max-width: 55rem){
+        height: 9rem;
+    }
+    @media only screen and (max-width: 600px){
+        font-size: 14px;
+        height: 9rem;
+        width: 25rem;
+        .name, .description{
+            width: 30%;
+        }
+        .price{
+            width: 15%;
+        }
+        .cat-id{
+            width: 10%;
+        }
+        
+        .options{
+            width: 15%;
+        }
+    }   
 `

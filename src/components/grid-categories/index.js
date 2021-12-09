@@ -26,15 +26,15 @@ const GridCategories = ({categories}) => {
             </thead>
             <tbody>
                 <Item>
-                    <td>ID</td>
-                    <td>NOME</td>
-                    <td>OPÇÕES</td>
+                    <td class="id">ID</td>
+                    <td class="name">NOME</td>
+                    <td class="options">OPÇÕES</td>
                 </Item>
                 {categories.map( (category, index) => (
                     <Item key={index}>
-                        <td>{category.id}</td>
-                        <td>{category.name}</td>
-                        <td>
+                        <td class="id">{category.id}</td>
+                        <td class="name">{category.name}</td>
+                        <td class="options">
                             {/* transformar de <a> para <Link> */}
                             <a><img src={EditPencil} alt="Edit"></img></a>
                             <img onClick={() => DeleteCat(category)} src={Trash} alt="Delete"></img>
