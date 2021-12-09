@@ -13,8 +13,10 @@ import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
 import {Pratos} from './components/pratos';
+
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
+
 
 function App() {
 
