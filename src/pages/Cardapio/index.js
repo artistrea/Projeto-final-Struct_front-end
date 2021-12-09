@@ -13,7 +13,6 @@ const Cardapio = () => {
       })
     }, [])
 
-
     const [meals, setMeals] = useState([])
     useEffect(() => {
       api.get('/meals/index').then((response) => {
@@ -21,10 +20,25 @@ const Cardapio = () => {
       })
     }, [])
 
+    const [filterBy, setFilterBy] = useState(-1)
+    const [filteredMeals, setFilteredMeals] = useState(meals)
+    const filterMeals = () => {
+      var filtered = []
+      if (filterBy >= 0){
+        meals.forEach(function(meal){ (meal.category_id === filterBy) && filtered.push(meal) });
+        return filtered}
+      else {return meals}
+    }
+
+    useEffect(() => {
+      setFilteredMeals(filterMeals())
+    }, [filterBy])
+    
+
     return (
         <div>
-            <Filtro categories={categories} />
-            <Pratos meals={meals} />
+            <Filtro categories={categories} setFilterBy={setFilterBy}/>
+            <Pratos meals={filteredMeals} />
         </div>
     )
 }
