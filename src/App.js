@@ -1,13 +1,13 @@
 import './global.css'
+import { useEffect, useState } from "react";
+import { api } from "./services/api"
 
 import Footer from "./components/footer";
 import Ofertas from "./components/ofertas";
 import Ofertona from "./components/ofertona";
 import Ofertinhas from "./components/ofertinhas";
-import { useEffect, useState } from "react";
 import Button from "./components/button";
 import Filtro from "./components/filtro-cardapio";
-import { api } from "./services/api"
 import Banner from './components/banner-combos';
 import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
@@ -16,6 +16,7 @@ import Navbar from './components/navbar';
 import Login from './components/Formulario-login';
 import Cadastro from './components/formulario-cadastro';
 import AlterarDados from './components/formulario-alterar-dados';
+import {Pratos} from './components/pratos';
 
 function App() {
 
@@ -27,23 +28,28 @@ function App() {
     })
   }, [])
 
+
+  const [meals, setMeals] = useState([])
+  useEffect(() => {
+    api.get('/meals/index').then((response) => {
+      setMeals(response.data)
+    })
+  }, [])
+
   return (
     <>
-      {/*<Navbar text="Perfil"/>*/}
-      {/*<Login/>*/}
-      {/*<Cadastro/>*/}
-      <AlterarDados/>
-      {/* <Filtro categories={categories}/> */}
-      {/*<Imagem />
-      <ImagemR /> */}
-      {/* <Perfil />*/}
-      {/*<Button text="Entrar"/>*/}
-      {/*<Button text="Cadastrar"/>*/}
-      {/*<Button text="Criar conta"/>
+      <Filtro categories={categories}/> 
+      <Pratos meals={meals}/>
+      {/* <Imagem />
+      <ImagemR />
+      <Perfil />
+      <Button text="Entrar"/>
+      <Button text="Cadastrar"/>
+      <Button text="Criar conta"/> 
       <Ofertona />
       <Ofertas /> 
-      <Ofertinhas />  */}
-      {/*<Footer/>*/}
+      <Ofertinhas /> 
+      <Footer /> */}
     </>
   );
 }
