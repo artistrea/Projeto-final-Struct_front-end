@@ -1,8 +1,10 @@
 import { Container } from "./styles"
 import Logo from "./../../imgs/Logo.png"
 import navbarImg from "./../../imgs/navbarImg.jpg"
+import { useUserContext } from "../../context/useUserContext"
 
 const Navbar = (props) => {
+    const {user} = useUserContext()
     return (
         <Container >
             
@@ -15,7 +17,7 @@ const Navbar = (props) => {
                 <a href="#">Restaurantes</a>
             </div>
             <div className='nav-right nav-list'>
-                <a href="#">{props.text}</a>
+                <a href="#">{user? "Perfil" : "Entrar"}</a>
             </div>
             
         </Container>

@@ -20,6 +20,7 @@ import {Pratos} from './components/pratos';
 
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
+import { UserProvider } from './context/useUserContext';
 
 
 function App() {
@@ -41,12 +42,15 @@ function App() {
   // }, [])
 
   
+  
   return (
-    <BrowserRouter>
-      {/* Colocar tag da navbar aqui */}
-      <Routes />
-      <Footer />
-    </ BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes />
+        <Footer />
+      </ BrowserRouter>
+    </UserProvider>
   );
 }
 

@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import Tabua from "./../../imgs/navbarImg.jpg"
 
 export const Container = styled.nav`
     
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     height: 104px;
 
-    background: url(" + /src/imgs/navbarImg.jpg + ");
-    background-size: 100vw;
+    background-image: url(${Tabua});
+    background-size: 100% 100%;
     //background-color: pink;
     text-align:center;
     

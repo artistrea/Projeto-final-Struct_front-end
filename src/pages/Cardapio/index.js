@@ -3,6 +3,7 @@ import { api } from "../../services/api"
 
 import Filtro from "../../components/filtro-cardapio"
 import { Pratos } from "../../components/pratos"
+import LoginForm from "../../components/Formulario-login";
 
 const Cardapio = () => {
     const [categories, setCategories] = useState([])
@@ -39,7 +40,7 @@ const Cardapio = () => {
 
     return (
         <div>
-          <nav>Navbar</nav>
+          <LoginForm />
           <Filtro categories={categories} setFilterBy={setFilterBy}/>
           <Pratos meals={filteredMeals} />
         </div>

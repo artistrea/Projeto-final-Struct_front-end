@@ -12,7 +12,7 @@ const Testes = () => {
         <div>
            Página de testes
            <AdmSidebar user={{name: "artur", email: "art@art"}}/>
-           <UpdateUserForm />
+           <LoginForm />
         </div>
     )
 }

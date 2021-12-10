@@ -2,38 +2,18 @@ import { Container } from "./styles"
 import { useState } from "react"
 import { userApi } from "../../services/api"
 import Button from "../button"
+import { useUserContext } from "../../context/useUserContext"
 
 const UpdateUserForm = () => {
 
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [password_confirmation, setPassword_confirmation] = useState('')
-    const updateUser = async () => {
-        updateValido() &&
-        await userApi.post("/users/create", {
-            user:{
-                name: name,
-                password: password,
-                password_confirmation: password_confirmation
-            }}).then((response) => alert("criado"))
-            .catch((response) => alert("Já existe uma conta com esse e-mail"))
-    }
-    const updateValido = () => {
-        if (name != '') {
-            if(password.length >= 6){
-                if(password_confirmation === password){
-                    return true
-                }
-                else {alert("Confirmação de senha precisa ser igual à senha"); return false}
-            }
-            else {alert("Senha precisa ter pelo menos 6 caracteres"); return false}
-        }
-        else {alert("Nome inválido"); return false}
-    }
+    const {updateUser} = useUserContext
 
     return(
         <Container>
-            <form onSubmit={(event) => {event.preventDefault(); updateUser()}}>
+            <form onSubmit={(event) => {event.preventDefault(); updateUser(name, password, password_confirmation)}}>
                 <h1>Nome:</h1>                    
                 <input 
                     placeholder="nome" 

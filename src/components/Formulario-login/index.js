@@ -2,23 +2,17 @@ import { Container } from "./styles"
 import { useState } from "react/cjs/react.development";
 import { userApi } from "../../services/api";
 import Button from "./../button/index";
+import { useUserContext } from "../../context/useUserContext";
 
 const LoginForm = () => {
-    const [user, setUser] = useState({})
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const login = async () => {
-        await userApi.get("/users/login", {
-            params: {email: email, password: password}
-        }).then((response) => setUser(response.data))
-        .catch((response) => alert("Senha ou usuário incorreto"))
-    }
-    
+    const {login} = useUserContext()
 
     return(
         <Container>
-            <form onSubmit={(event) => {event.preventDefault(); login()}}>
+            <form onSubmit={(event) => {event.preventDefault(); login(email, password)}}>
                 <h1>Email:</h1> 
                 <input 
                     placeholder="email" 
