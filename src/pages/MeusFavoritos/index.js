@@ -20,13 +20,8 @@ const MeusFavoritos = () => {
       })
     }, [])
 
-    // const [favorites, setFavorites] = useState([])
-    // useEffect(() => {
-    //     api.get('/favorites/index').then((response) => {
-    //         console.log(response.data)
-    //         setFavorites(response.data)
-    //     })
-    // }, [])
+    // const [favorites, setFavorites] = useState(user.favorites)
+    // pegando o user do contexto
 
     const [filterBy, setFilterBy] = useState(-1)
     const [filteredMeals, setFilteredMeals] = useState(meals)
@@ -44,8 +39,9 @@ const MeusFavoritos = () => {
 
     return (
         <div>
-            <Filtro categories={categories} setFilterBy={setFilterBy}/>
-            <Pratos meals={filteredMeals} />
+          <nav>Navbar</nav>
+          <Filtro categories={categories} setFilterBy={setFilterBy}/>
+          <Pratos meals={filteredMeals} />
         </div>
     )
 }

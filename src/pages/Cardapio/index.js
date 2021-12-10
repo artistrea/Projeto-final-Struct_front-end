@@ -6,22 +6,24 @@ import { Pratos } from "../../components/pratos"
 
 const Cardapio = () => {
     const [categories, setCategories] = useState([])
+    const [meals, setMeals] = useState([])
 
     useEffect(() => {
       api.get('/categories/index').then((response) => {
         setCategories(response.data)
       })
-    }, [])
-
-    const [meals, setMeals] = useState([])
-    useEffect(() => {
       api.get('/meals/index').then((response) => {
-        setMeals(response.data)
+        let arr = response.data
+        setFilteredMeals(arr)
+        setMeals(arr)
       })
     }, [])
 
+    
+
     const [filterBy, setFilterBy] = useState(-1)
     const [filteredMeals, setFilteredMeals] = useState(meals)
+
     const filterMeals = () => {
       var filtered = []
       if (filterBy >= 0){
@@ -37,8 +39,9 @@ const Cardapio = () => {
 
     return (
         <div>
-            <Filtro categories={categories} setFilterBy={setFilterBy}/>
-            <Pratos meals={filteredMeals} />
+          <nav>Navbar</nav>
+          <Filtro categories={categories} setFilterBy={setFilterBy}/>
+          <Pratos meals={filteredMeals} />
         </div>
     )
 }

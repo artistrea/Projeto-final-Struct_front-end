@@ -13,8 +13,8 @@ const Routes = () => {
             <Route path='/cardapio' component={Cardapio} />
             {/* Rota de testes, apagar na versão final */}
             <Route path='/testes' component={Testes} />
-            <Route path='/login' component={Cadastro} />
-            <Route path='/cadastrar' component={Login} />
+            <Route path='/login' component={Login} />
+            <Route path='/cadastrar' component={Cadastro} />
             {/* <Route path='/user' component={Usuario} /> */}
             {/* <Route path='/formPrato' component={} />
             <Route path='/formCategoria' component={} />
