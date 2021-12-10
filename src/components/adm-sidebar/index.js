@@ -6,7 +6,7 @@ import {
 const AdmSidebar = ({user}) => {
     return (
         <Container>
-            <div class="top">
+            <div className="top">
                 <p>Olá, {user.name}</p>
                 <p>{user.email}</p>
                 {/* <Link to='/'>Alterar meus dados</Link>
@@ -15,7 +15,7 @@ const AdmSidebar = ({user}) => {
                 <a href="">Sair</a>
             </div>
 
-            <div class="bottom">
+            <div className="bottom">
                 <a href="">Pratos</a>
                 <a href="">Criar prato</a>
                 <a href="">Categorias</a>

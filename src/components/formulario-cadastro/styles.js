@@ -2,12 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div `
     
-    position: absolute;
     width: 354px;
-    height: 501px;
-    left: 112px;
-    top: 247px;  
-
+    height: 45.8rem;
 
     display: flex;
     background: none;
@@ -15,19 +11,33 @@ export const Container = styled.div `
     h1{
         width: 125px;
         height: 18px;
-
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
         font-size: 40px;
-        line-height: 13px;
         
         /* identical to box height, or 32% */
         
         color: #FFFFFF;
     }
 
-    .separar-campos{
-        margin-bottom: 18px;
+    }
+    input{
+        width: 338px;
+        height: 64px;
+        margin: 0.5rem auto;
+
+        background: rgba(199, 255, 255, 0.65);
+        border-radius: 50px;
+        border: none;
+
+        text-align: center;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 18px;
+
+        color: #000000;
+        :focus{
+            outline: none;  
+        }
     }
 `

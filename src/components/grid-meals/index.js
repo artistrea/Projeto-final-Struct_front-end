@@ -26,19 +26,19 @@ const GridMeals = ({meals}) => {
             </thead>
             <tbody>
                 <Item>
-                    <td class="name">NOME</td>
-                    <td class="price">PREÇO</td>
-                    <td class="cat-id">ID DA CATEGORIA</td>
-                    <td class="descriptiom">DESCRIÇÃO</td>
-                    <td class="options">OPÇÕES</td>
+                    <td className="name">NOME</td>
+                    <td className="price">PREÇO</td>
+                    <td className="cat-id">ID DA CATEGORIA</td>
+                    <td className="descriptiom">DESCRIÇÃO</td>
+                    <td className="options">OPÇÕES</td>
                 </Item>
                 {meals.map( (meal, index) => (
                     <Item key={index}>
-                        <td class="name">{meal.name}</td>
-                        <td class="price">{(meal.price).toFixed(2)}</td>
-                        <td class="cat-id">{meal.category_id}</td>
-                        <td class="description">{meal.description}</td>
-                        <td class="options">
+                        <td className="name">{meal.name}</td>
+                        <td className="price">{(meal.price).toFixed(2)}</td>
+                        <td className="cat-id">{meal.category_id}</td>
+                        <td className="description">{meal.description}</td>
+                        <td className="options">
                             {/* transformar de <a> para <Link> */}
                             <a><img src={EditPencil} alt="Edit"></img></a>
                             <img onClick={() => DeleteCat(meal)} src={Trash} alt="Delete"></img>

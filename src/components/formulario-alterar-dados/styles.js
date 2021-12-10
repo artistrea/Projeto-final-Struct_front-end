@@ -2,11 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
-    position: absolute;
     width: 342px;
-    height: 359px;
-    left: 137px;
-    top: 213px; 
+    height: 36.3rem;
 
     display: flex;
     background: none;
@@ -26,7 +23,24 @@ export const Container = styled.div `
         color: #FFFFFF;
     }
 
-    .separar-campos{
-        margin-bottom: 18px;
-    }
+    input{
+        width: 338px;
+        height: 64px;
+        margin: 0.5rem auto;
+
+        background: rgba(199, 255, 255, 0.65);
+        border-radius: 50px;
+        border: none;
+
+        text-align: center;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 18px;
+
+        color: #000000;
+        :focus{
+            outline: none;  
+        }
 `
