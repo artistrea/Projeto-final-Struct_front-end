@@ -18,40 +18,34 @@ import Cadastro from './components/formulario-cadastro';
 import AlterarDados from './components/formulario-alterar-dados';
 import {Pratos} from './components/pratos';
 
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
+
+
 function App() {
 
-  const [categories, setCategories] = useState([])
+  // const [categories, setCategories] = useState([])
 
-  useEffect(() => {
-    api.get('/categories/index').then((response) => {
-      setCategories(response.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   api.get('/categories/index').then((response) => {
+  //     setCategories(response.data)
+  //   })
+  // }, [])
 
 
-  const [meals, setMeals] = useState([])
-  useEffect(() => {
-    api.get('/meals/index').then((response) => {
-      setMeals(response.data)
-    })
-  }, [])
+  // const [meals, setMeals] = useState([])
+  // useEffect(() => {
+  //   api.get('/meals/index').then((response) => {
+  //     setMeals(response.data)
+  //   })
+  // }, [])
 
   return (
-    <>
-      <Navbar text="login"/>
-      {/*<Filtro categories={categories}/> 
-      <Pratos meals={meals}/>*/}
-      {/* <Imagem />
-      <ImagemR />
-      <Perfil />
-      <Button text="Entrar"/>
-      <Button text="Cadastrar"/>
-      <Button text="Criar conta"/> 
-      <Ofertona />
-      <Ofertas /> 
-      <Ofertinhas /> 
-      <Footer /> */}
-    </>
+    <BrowserRouter>
+      {/* Colocar tag da navbar aqui */}
+      <Routes />
+      <Footer />
+    </ BrowserRouter>
   );
 }
 
