@@ -7,15 +7,19 @@ import { api } from '../../services/api.js'
 const CliqueEstrela = async (estrela, setEstrela, meal_id) => {
     if(estrela === EstrelaFavorito) {
         setEstrela(EstrelaNaoFavorito);
-        await api.create(`/favorites/delete/${meal_id}`)
+        await api.delete(`/favorites/delete/${meal_id}`)
+        .then((response) => {alert(response.data)})
+        .catch((response) => {alert(response)})
     }
     else{ 
         setEstrela(EstrelaFavorito)
-        await api.create("/favorites/create", {
+        await api.post("/favorites/create", {
             favorite: {
                 meal_id: meal_id
             }
         })
+        .then((response) => {alert(response.data)})
+        .catch((response) => {alert(response)})
     }
 }
 
