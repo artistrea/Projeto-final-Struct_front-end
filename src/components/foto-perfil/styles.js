@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: auto; //Mudar para centralizar a posição da imagem
+    margin: 6rem 30rem; //Mudar para centralizar a posição da imagem
     width: 20.25rem;
     height: 20.25rem;
     position: relative;

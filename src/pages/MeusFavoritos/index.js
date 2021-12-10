@@ -4,26 +4,27 @@ import { api } from "../../services/api"
 import Filtro from "../../components/filtro-cardapio"
 import { Pratos } from "../../components/pratos"
 
-const Cardapio = () => {
-    const [categories, setCategories] = useState([])
-    const [meals, setMeals] = useState([])
+const MeusFavoritos = () => {
 
+    const [categories, setCategories] = useState([])
     useEffect(() => {
       api.get('/categories/index').then((response) => {
         setCategories(response.data)
       })
+    }, [])
+
+    const [meals, setMeals] = useState([])
+    useEffect(() => {
       api.get('/meals/index').then((response) => {
-        let arr = response.data
-        setFilteredMeals(arr)
-        setMeals(arr)
+        setMeals(response.data)
       })
     }, [])
 
-    
+    // const [favorites, setFavorites] = useState(user.favorites)
+    // pegando o user do contexto
 
     const [filterBy, setFilterBy] = useState(-1)
     const [filteredMeals, setFilteredMeals] = useState(meals)
-
     const filterMeals = () => {
       var filtered = []
       if (filterBy >= 0){
@@ -35,7 +36,6 @@ const Cardapio = () => {
     useEffect(() => {
       setFilteredMeals(filterMeals())
     }, [filterBy])
-    
 
     return (
         <div>
@@ -46,4 +46,4 @@ const Cardapio = () => {
     )
 }
 
-export default Cardapio
+export default MeusFavoritos
