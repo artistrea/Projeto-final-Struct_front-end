@@ -40,6 +40,7 @@ function App() {
   //   })
   // }, [])
 
+  
   return (
     <BrowserRouter>
       {/* Colocar tag da navbar aqui */}
