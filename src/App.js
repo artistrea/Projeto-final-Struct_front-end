@@ -38,8 +38,9 @@ function App() {
 
   return (
     <>
-      <Filtro categories={categories}/> 
-      <Pratos meals={meals}/>
+      <Navbar text="login"/>
+      {/*<Filtro categories={categories}/> 
+      <Pratos meals={meals}/>*/}
       {/* <Imagem />
       <ImagemR />
       <Perfil />
