@@ -43,7 +43,7 @@ const CadastroForm = () => {
                     value={password_confirmation}
                     onChange={(event) => setPassword_confirmation(event.target.value) }
                 />
-                <Button type='submit' text="Entrar"/>
+                <Button type='submit' text="Cadastrar"/>
             </form>
         </Container>
     );

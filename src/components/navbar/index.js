@@ -2,6 +2,7 @@ import { Container } from "./styles"
 import Logo from "./../../imgs/Logo.png"
 import navbarImg from "./../../imgs/navbarImg.jpg"
 import { useUserContext } from "../../context/useUserContext"
+import { Link } from "react-router-dom"
 
 const Navbar = (props) => {
     const {user} = useUserContext()
@@ -12,12 +13,17 @@ const Navbar = (props) => {
                 <img src={Logo} alt="logo"/>
             </div>
             <div className='nav-middle nav-list'>
-                <a href="#">Início</a>
-                <a href="#">Cardápio</a>
+                <Link to="/">Ofertas</Link>
+                <Link to="/cardapio">Cardápio</Link>
                 <a href="#">Restaurantes</a>
             </div>
             <div className='nav-right nav-list'>
-                <a href="#">{user? "Perfil" : "Entrar"}</a>
+                {
+                    (user)?
+                    <Link to='/'>Perfil</Link>
+                    :
+                    <Link to='/login'>Entrar</Link>   
+                }
             </div>
             
         </Container>

@@ -10,7 +10,7 @@ const UserContext = createContext({});
 
 const UserProvider = ({children}) => {
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(undefined);
 
     const login = async (email, password) => {
         await userApi.get("/users/login", {
@@ -83,6 +83,7 @@ const UserProvider = ({children}) => {
 
     const [favorites, setFavorites] = useState([])
     useEffect( async () => {
+        user &&
         await api.get('/favorites/index', {
             headers:{
                 'X-User-Token': user['authentication_token'],
@@ -94,7 +95,7 @@ const UserProvider = ({children}) => {
         .catch(() => setFavorites([]))
     }, [user])
     const addRemoveFavorites = async (estrela, setEstrela, meal_id) => {
-        if(estrela === EstrelaFavorito) {
+        if(estrela === EstrelaFavorito && user) {
             await api.delete(`/favorites/delete/${meal_id}`, {
                 headers:{
                     'X-User-Token': user['authentication_token'],
@@ -108,7 +109,7 @@ const UserProvider = ({children}) => {
                 setFavorites(newFav)})
             .catch((response) => {alert(response)})
         }
-        else{
+        else if(user){
             await api.post("/favorites/create", {favorite: {meal_id: meal_id}}, {
                 headers:{
                     'X-User-Token': user['authentication_token'],
@@ -118,6 +119,7 @@ const UserProvider = ({children}) => {
             .then((response) => {setFavorites([...favorites, response.data.meal]); setEstrela(EstrelaFavorito)})
             .catch((response) => alert(response))
         }
+        else {alert("Você deve estar logado para favoritar")}
     }
 
     return (

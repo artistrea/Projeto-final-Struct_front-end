@@ -24,25 +24,6 @@ import { UserProvider } from './context/useUserContext';
 
 
 function App() {
-
-  // const [categories, setCategories] = useState([])
-
-  // useEffect(() => {
-  //   api.get('/categories/index').then((response) => {
-  //     setCategories(response.data)
-  //   })
-  // }, [])
-
-
-  // const [meals, setMeals] = useState([])
-  // useEffect(() => {
-  //   api.get('/meals/index').then((response) => {
-  //     setMeals(response.data)
-  //   })
-  // }, [])
-
-  
-  
   return (
     <UserProvider>
       <BrowserRouter>

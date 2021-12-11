@@ -4,7 +4,7 @@ export const Container = styled.div`
     background-color: rgba(197, 248, 245, 0.71);
     height: 53.125rem;
     width: 29.75rem;
-    margin: 6.25rem 0 12.5rem 2rem;
+    margin: 6.25rem 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,12 +22,12 @@ export const Container = styled.div`
             font-weight: normal;
             margin: 0.5rem 0;
             font-size: 1.8rem;
-            width: inherit;
+            width: 100%;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         a{
-            width: inherit;
+            width: 100%;
             font-weight: bold;
             padding: 1rem 0;
             font-size: 1.6rem;
@@ -47,7 +47,7 @@ export const Container = styled.div`
         max-width: 29rem;
         overflow: hidden;
         a{
-            width: inherit;
+            width: 100%;
             font-weight: bold;
             padding: 1rem 0;
             font-size: 1.6rem;
@@ -57,6 +57,20 @@ export const Container = styled.div`
             :hover {
                 background-color: #AEE0DDB5;
             }
+        }
+    }
+
+    @media only screen and (max-width: 1347px) {
+        border-top-right-radius: 50px;
+    }
+
+    @media only screen and (max-width: 476px) {
+        width: 100%;
+        .top{
+            width: 100%;
+        }
+        .bottom{
+            width: 100%;
         }
     }
 `;

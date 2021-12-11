@@ -23,6 +23,6 @@ export const Container = styled.div`
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        margin: 2.188rem 0 0 0;
+        margin: 10rem 0 0 0;
     }
 `;
