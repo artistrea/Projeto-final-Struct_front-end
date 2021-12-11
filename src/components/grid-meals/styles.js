@@ -9,6 +9,7 @@ export const Container = styled.table`
     align-items: center;
     overflow-y: scroll;
     border-radius: 0px 50px 50px 0px;
+    margin-top: 6.25rem;
 
     tbody{
         width: 100%;
@@ -43,12 +44,16 @@ export const Container = styled.table`
         background-color: rgba(109, 205, 255, 0.95);
         overflow: hidden;
     }
+    @media only screen and (max-width: 1347px){
+        margin: 0 0 0 0;
+        overflow-x: scroll;
+    }
     @media only screen and (max-width: 55rem){
         width: 90%;
         height: 100vh;
-        margin: 0;
+        margin: 0 0 0 0;
         overflow-x: scroll;
-    }   
+    }
 `;
 
 export const Item = styled.tr` 

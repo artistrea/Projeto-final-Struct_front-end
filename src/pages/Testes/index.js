@@ -4,16 +4,23 @@ import LoginForm from "../../components/Formulario-login";
 import AdmSidebar from "../../components/adm-sidebar";
 import CadastroForm from "../../components/formulario-cadastro";
 import UpdateUserForm from "../../components/formulario-alterar-dados";
-
+import GridMeals from "./../../components/grid-meals/index"
+import { Container } from "./styles";
 
 const Testes = () => {
+    const [meals, setMeals] = useState([])
 
+    useEffect(() => {
+      api.get('/meals/index').then((response) => {
+        setMeals(response.data)
+      })
+    }, [])
     return (
-        <div>
-           Página de testes
-           <AdmSidebar user={{name: "artur", email: "art@art"}}/>
-           <LoginForm />
-        </div>
+        <Container>
+            <LoginForm />
+            <CadastroForm />
+            <UpdateUserForm /> 
+        </Container>
     )
 }
 

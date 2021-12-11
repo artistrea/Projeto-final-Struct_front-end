@@ -1,10 +1,10 @@
 import { Container } from "./styles"
 
-const Oferta = () => {
+const Oferta = ({src}) => {
     return (
         <Container>
             
-            <img src="https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer-1024x683.jpeg" alt="oferta"></img>
+            <img src={src} alt="oferta"></img>
 
             <p>Texto</p>
             
