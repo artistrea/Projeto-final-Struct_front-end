@@ -18,7 +18,12 @@ const Navbar = (props) => {
                 <a href="#">Restaurantes</a>
             </div>
             <div className='nav-right nav-list'>
-                <a href="#">{user? "Perfil" : "Entrar"}</a>
+                {
+                    (user)?
+                    <Link to='/'>Perfil</Link>
+                    :
+                    <Link to='/login'>Entrar</Link>   
+                }
             </div>
             
         </Container>

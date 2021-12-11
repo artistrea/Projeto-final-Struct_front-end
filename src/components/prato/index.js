@@ -11,7 +11,6 @@ import { useEffect } from 'react'
 const Prato = ({meal}) => {
     const {addRemoveFavorites, favorites} = useUserContext()
     useEffect(() => {
-        console.log(favorites)
         setEstrela(EstrelaNaoFavorito)
         favorites.forEach((fav) => {(fav['id'] == meal['id']) && setEstrela(EstrelaFavorito)})
     }, [favorites])
