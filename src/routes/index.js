@@ -7,6 +7,7 @@ import Home from "../pages/Home"
 import Login from "../pages/Login"
 import MeusFavoritos from "../pages/MeusFavoritos"
 import Testes from "../pages/Testes"
+import User from "../pages/Usuario"
 
 const Routes = () => {
     const {user} = useUserContext()
@@ -23,7 +24,7 @@ const Routes = () => {
             <Route path='/testes' component={Testes} />
             <Route path='/login' component={Login} />
             <Route path='/cadastrar' component={Cadastro} />
-            {/* <Route path='/user' component={Usuario} /> */}
+            <Route path='/user' component={User} />
             {/* <Route path='/formPrato' component={} />
             <Route path='/formCategoria' component={} />
             <Route path='/formUsuario' component={} /> */}

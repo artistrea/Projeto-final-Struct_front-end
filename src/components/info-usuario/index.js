@@ -1,18 +1,19 @@
 import { useUserContext } from "../../context/useUserContext"
 import { Container, Grid } from "./styles"
 
-const Perfil = ({user}) => {
+const Info = () => {
 
     const user = useUserContext
 
     return (
         <>
             <Container>
-                <img className="foto" src="https://st2.depositphotos.com/3957801/5642/i/600/depositphotos_56423065-stock-photo-bacon-burger.jpg" alt="foto de perfil"></img>
+                <p>Nome do usuário</p>
+                <p>Email do usuário</p>
             </Container>
         </>
         
     )
 }
 
-export default Perfil
+export default Info

@@ -3,8 +3,15 @@ import { useState } from "react/cjs/react.development";
 import { userApi } from "../../services/api";
 import Button from "./../button/index";
 import { useUserContext } from "../../context/useUserContext";
+import { Link, useHistory } from "react-router-dom";
 
 const LoginForm = () => {
+
+    let history = useHistory();
+
+    const redirect = () => {
+        history.push('/')
+    }
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -12,7 +19,7 @@ const LoginForm = () => {
 
     return(
         <Container>
-            <form onSubmit={(event) => {event.preventDefault(); login(email, password)}}>
+            <form onSubmit={(event) => {event.preventDefault(); login(email, password);}}>
                 <h1>Email:</h1> 
                 <input 
                     placeholder="email" 
@@ -29,7 +36,9 @@ const LoginForm = () => {
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     />
-                <Button type='submit' text="Entrar"/>
+                <Link to='/'>
+                    <Button type='submit' text="Entrar" onClick={redirect} />
+                </Link>
             </form>
         </Container>
     );

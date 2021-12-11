@@ -4,6 +4,7 @@ import { useState } from "react/cjs/react.development";
 import { userApi } from "../../services/api";
 import Button from "../button";
 import { useUserContext } from "../../context/useUserContext";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CadastroForm = () => {
 
@@ -43,7 +44,9 @@ const CadastroForm = () => {
                     value={password_confirmation}
                     onChange={(event) => setPassword_confirmation(event.target.value) }
                 />
-                <Button type='submit' text="Cadastrar"/>
+                <Link to='/'>
+                    <Button type='submit' text="Cadastrar"/>
+                </Link>
             </form>
         </Container>
     );

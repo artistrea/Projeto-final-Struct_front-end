@@ -15,12 +15,12 @@ const Navbar = (props) => {
             <div className='nav-middle nav-list'>
                 <Link to="/">Ofertas</Link>
                 <Link to="/cardapio">Cardápio</Link>
-                <a href="#">Restaurantes</a>
+                <Link to="/meusFavoritos"> Meus Favoritos </ Link>
             </div>
             <div className='nav-right nav-list'>
                 {
                     (user)?
-                    <Link to='/'>Perfil</Link>
+                    <Link to='/user'>Perfil</Link>
                     :
                     <Link to='/login'>Entrar</Link>   
                 }

@@ -2,8 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     
-    display: block;
-    position: fixed;
+    position: flex;
+    text-align: right;
+    height: 90%;
+    width: 40%;
+    float: right;
+
+    img {
+        width: 100%;
+        display: inline;
+    }
+    /* position: fi
+    xed;
     width: 62%;
     height:90%;
     right: 0;
@@ -16,5 +26,5 @@ export const Container = styled.div`
 
     @media only screen and (max-width: 980px) {
         display: none;
-    }
+    } */ 
 `;
