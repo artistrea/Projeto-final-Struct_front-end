@@ -15,7 +15,7 @@ const Banner = () => {
             <Elipse dia="Sábado" combo="2 entradas (à sua escolha) + 2 refrigerantes " preco="R$19,99"/>
             <Elipse dia="Domingo" combo="2 hamburgueres de siri + Sirishake" preco="R$19,99"/>
             <hr />
-            <div class="slogan">
+            <div className="slogan">
                 Todos os combos disponiveis no domingo!
             </div>
         </Container>

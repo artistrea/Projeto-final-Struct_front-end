@@ -3,6 +3,7 @@ import { api } from "../../services/api"
 
 import Filtro from "../../components/filtro-cardapio"
 import { Pratos } from "../../components/pratos"
+import { useUserContext } from "../../context/useUserContext";
 
 const MeusFavoritos = () => {
 
@@ -13,33 +14,24 @@ const MeusFavoritos = () => {
       })
     }, [])
 
-    const [meals, setMeals] = useState([])
-    useEffect(() => {
-      api.get('/meals/index').then((response) => {
-        setMeals(response.data)
-      })
-    }, [])
-
-    // const [favorites, setFavorites] = useState(user.favorites)
-    // pegando o user do contexto
+    const {favorites} = useUserContext()
 
     const [filterBy, setFilterBy] = useState(-1)
-    const [filteredMeals, setFilteredMeals] = useState(meals)
+    const [filteredMeals, setFilteredMeals] = useState(favorites)
     const filterMeals = () => {
       var filtered = []
       if (filterBy >= 0){
-        meals.forEach(function(meal){ (meal.category_id === filterBy) && filtered.push(meal) });
+        favorites.forEach(function(meal){ (meal.category_id === filterBy) && filtered.push(meal) });
         return filtered}
-      else {return meals}
+      else {return favorites}
     }
 
     useEffect(() => {
       setFilteredMeals(filterMeals())
-    }, [filterBy])
+    }, [filterBy, favorites])
 
     return (
         <div>
-          <nav>Navbar</nav>
           <Filtro categories={categories} setFilterBy={setFilterBy}/>
           <Pratos meals={filteredMeals} />
         </div>

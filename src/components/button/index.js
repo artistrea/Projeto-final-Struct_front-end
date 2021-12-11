@@ -1,9 +1,9 @@
 import { Container } from "./styles"
 
-const Button = (props) => {
+const Button = ({text}) => {
     return (
         <Container>
-            {props.text}
+            {text}
         </Container>
     )
 }

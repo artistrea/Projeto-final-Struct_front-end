@@ -12,10 +12,15 @@ import Banner from './components/banner-combos';
 import Perfil from './components/foto-perfil';
 import Imagem from './components/imagem';
 import ImagemR from './components/imagem-responsiva';
+import Navbar from './components/navbar';
+import LoginForm from './components/Formulario-login';
+import Cadastro from './components/formulario-cadastro';
+import AlterarDados from './components/formulario-alterar-dados';
 import {Pratos} from './components/pratos';
 
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
+import { UserProvider } from './context/useUserContext';
 
 
 function App() {
@@ -36,12 +41,16 @@ function App() {
   //   })
   // }, [])
 
+  
+  
   return (
-    <BrowserRouter>
-      {/* Colocar tag da navbar aqui */}
-      <Routes />
-      <Footer />
-    </ BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes />
+        <Footer />
+      </ BrowserRouter>
+    </UserProvider>
   );
 }
 
