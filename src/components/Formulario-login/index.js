@@ -9,7 +9,8 @@ const LoginForm = () => {
 
     let history = useHistory();
 
-    const redirect = () => {
+    const redirect = (logado) => {
+        logado &&
         history.push('/')
     }
 
@@ -19,7 +20,10 @@ const LoginForm = () => {
 
     return(
         <Container>
-            <form onSubmit={(event) => {event.preventDefault(); login(email, password);}}>
+            <form onSubmit={(event) => {
+                event.preventDefault();
+                const logado = login(email, password)
+                redirect(logado) }}>
                 <h1>Email:</h1> 
                 <input 
                     placeholder="email" 
@@ -36,11 +40,9 @@ const LoginForm = () => {
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     />
-                <Link to='/'>
-                    <Button type='submit' text="Entrar" onClick={redirect} />
-                </Link>
+                    <Button type='submit' text="Entrar"/>
+                
             </form>
-            <Link to="/cadastrar"><Button text="Cadastrar"/></Link>
         </Container>
     );
 }
