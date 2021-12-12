@@ -9,7 +9,7 @@ import { Container } from "./styles";
 import { useUserContext } from "../../context/useUserContext";
 
 const Testes = () => {
-    const user = useUserContext
+    const {user} = useUserContext()
 
     return (
         <Container>

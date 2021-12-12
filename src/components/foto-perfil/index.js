@@ -1,9 +1,9 @@
 import { useUserContext } from "../../context/useUserContext"
 import { Container, Grid } from "./styles"
 
-const Perfil = ({user}) => {
+const Perfil = () => {
 
-    const user = useUserContext
+    const {user} = useUserContext()
 
     return (
         <>

@@ -3,7 +3,7 @@ import { Container, Grid } from "./styles"
 
 const Info = () => {
 
-    const user = useUserContext
+    const {user} = useUserContext()
 
     return (
         <>
