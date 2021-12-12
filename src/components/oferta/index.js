@@ -1,12 +1,12 @@
 import { Container } from "./styles"
 
-const Oferta = ({src}) => {
+const Oferta = ({text, src}) => {
     return (
         <Container>
             
             <img src={src} alt="oferta"></img>
 
-            <p>Texto</p>
+            <p>{text}</p>
             
         </Container>
     )

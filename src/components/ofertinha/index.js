@@ -1,11 +1,11 @@
 import { Container } from "./styles"
 
-const Ofertinha = () => {
+const Ofertinha = ({src, text}) => {
     return (
         <Container>
-            <img src="https://st2.depositphotos.com/3957801/5642/i/600/depositphotos_56423065-stock-photo-bacon-burger.jpg" alt="oferta"></img>
+            <img src={src} alt="oferta"></img>
 
-            <p>Texto</p>
+            <p>{text}</p>
         </Container>
     )
 }
