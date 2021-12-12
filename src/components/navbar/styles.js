@@ -62,7 +62,24 @@ export const Container = styled.nav`
         border-radius: 13px;
         transition: 500ms ease;
     }
+    
+    @media only screen and (max-width: 1427px) {
+        a{
+            font-size: 2.2rem;
+        }
 
+        .nav-middle{
+            width: 100%;
+        }
+        img {
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            margin: 0;
+            height: 4.8rem;
+        }
+    }
+    
     @media only screen and (max-width: 1100px) {
         a{
             font-size: 2rem;
