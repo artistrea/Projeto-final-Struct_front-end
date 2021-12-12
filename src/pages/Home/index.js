@@ -7,7 +7,7 @@ import { Container } from "./styles"
 const Home = () => {
     return (
         <Container>
-            <nav>Navbar</nav>
+            <nav>.</nav>
             <Ofertona />
             <Ofertas />
             <Ofertinhas />

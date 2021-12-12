@@ -6,20 +6,16 @@ import CadastroForm from "../../components/formulario-cadastro";
 import UpdateUserForm from "../../components/formulario-alterar-dados";
 import GridMeals from "./../../components/grid-meals/index"
 import { Container } from "./styles";
+import { useUserContext } from "../../context/useUserContext";
+import FormCategorias from "../../components/form-categorias";
+import FormPratos from "../../components/formPratos";
 
 const Testes = () => {
-    const [meals, setMeals] = useState([])
+    const {user} = useUserContext()
 
-    useEffect(() => {
-      api.get('/meals/index').then((response) => {
-        setMeals(response.data)
-      })
-    }, [])
     return (
         <Container>
-            <LoginForm />
-            <CadastroForm />
-            <UpdateUserForm /> 
+          <FormPratos />
         </Container>
     )
 }

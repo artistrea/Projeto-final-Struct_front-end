@@ -5,6 +5,7 @@ import { api } from "../services/api";
 import EstrelaFavorito from "./../imgs/estrela_favorito.png"
 import EstrelaNaoFavorito from "./../imgs/estrela_n_favorito.png"
 import Cookie from 'js-cookie'
+import { useHistory } from "react-router-dom";
 
 const UserContext = createContext({});
 
@@ -13,12 +14,14 @@ const UserProvider = ({children}) => {
     const [user, setUser] = useState(undefined);
 
     const login = async (email, password) => {
+        
         await userApi.get("/users/login", {
             params: {email: email, password: password}
         })
         .then((response) => {
-            setUser(response.data)
-            Cookie.set('loggedinuser', JSON.stringify(response.data))
+            setUser(response.data);
+            Cookie.set('loggedinuser', JSON.stringify(response.data));
+            return true
         })
         .catch((response) => alert("Senha ou usuário incorreto"))
     }

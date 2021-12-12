@@ -4,6 +4,7 @@ import { useState } from "react/cjs/react.development";
 import { userApi } from "../../services/api";
 import Button from "../button";
 import { useUserContext } from "../../context/useUserContext";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CadastroForm = () => {
 
