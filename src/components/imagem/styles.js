@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const Container = styled.div`
     
     position: flex;
-    text-align: right;
-    height: 90%;
-    width: 40%;
+    height: 100vh;
+    width: 50%;
     float: right;
-
+    overflow: hidden;
     img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
         width: 100%;
-        display: inline;
     }
     /* position: fi
     xed;
@@ -22,9 +23,9 @@ export const Container = styled.div`
     img {
         width: 100%;
         margin-top: -60%;
-    }
-
-    @media only screen and (max-width: 980px) {
-        display: none;
     } */ 
+
+    @media only screen and (max-width: 1007px) {
+        display: none;
+    } 
 `;

@@ -8,7 +8,6 @@ import { Container } from "./styles";
 const Login = () => {
     return (
         <Container>
-            <nav>.</nav>
             <LoginForm />
             <Imagem />
             <ImagemR />
