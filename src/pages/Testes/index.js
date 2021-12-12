@@ -7,13 +7,15 @@ import UpdateUserForm from "../../components/formulario-alterar-dados";
 import GridMeals from "./../../components/grid-meals/index"
 import { Container } from "./styles";
 import { useUserContext } from "../../context/useUserContext";
+import FormCategorias from "../../components/form-categorias";
+import FormPratos from "../../components/formPratos";
 
 const Testes = () => {
     const {user} = useUserContext()
 
     return (
         <Container>
-          <AdmSidebar user={user} />
+          <FormPratos />
         </Container>
     )
 }

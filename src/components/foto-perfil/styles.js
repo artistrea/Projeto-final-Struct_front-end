@@ -10,10 +10,7 @@ export const Container = styled.div`
     border-radius: 50%;
 
     .foto {
-        display: inline;
         margin: 0 auto;
-        margin-left: -18%; //Mudar para centralizar a imagem
         height: 100%;
-        width: auto;
     }
 `;

@@ -2,8 +2,11 @@ import {
     Container
 } from './styles'
 import { Link } from 'react-router-dom'
+import { useUserContext } from '../../context/useUserContext'
 
-const AdmSidebar = ({user}) => {
+const AdmSidebar = () => {
+    const {user} = useUserContext()
+
     return (
         <Container>
             <div className="top">

@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
-    
+export const Container = styled.div`
+    margin: 1rem;
     display: flex;
     flex-direction: column;
-    margin: 0 5rem 0 5rem;
-    
-    height: 45.8rem;
-    width: 21.5rem;
+    width: 100%;
+    justify-content: center;
+    height: 32rem;
 
     h1{
         width: 125px;
@@ -19,13 +18,13 @@ export const Container = styled.div `
         color: #FFFFFF;
     }
     input{
-        width: 100%;
+        margin-top: 1rem;
+        width: 80%;
         height: 64px;
-
+        margin-left: 10%;
         background: rgba(199, 255, 255, 0.65);
         border-radius: 50px;
         border: none;
-        margin-top: 1rem;
         text-align: center;
         font-family: Roboto;
         font-style: normal;
@@ -40,7 +39,7 @@ export const Container = styled.div `
     }
 
     @media only screen and (max-width: 768px) {
-        max-width: 50%;
+        max-width: 100%;
         h1{
             font-size: 2rem;
         }
@@ -50,6 +49,7 @@ export const Container = styled.div `
         }
     }
     @media only screen and (max-width: 450px) {
+        max-width: 100%;
         h1{
             font-size: 1.5rem;
         }
@@ -58,4 +58,4 @@ export const Container = styled.div `
             height: 2.3rem;
         }
     }
-`
+`;

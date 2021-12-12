@@ -31,7 +31,10 @@ const Routes = () => {
             {/* <Route path='/formPrato' component={} />
             <Route path='/formCategoria' component={} />
             <Route path='/formUsuario' component={} /> */}
-            <Route path='/meusFavoritos' component={MeusFavoritos} />
+            {user &&
+                <Route path='/meusFavoritos' component={MeusFavoritos} />
+            }
+            {/* <Route path='/meusFavoritos' component={MeusFavoritos} /> */}
             <Route path='*' component={Home} />
         </Switch>
     )
