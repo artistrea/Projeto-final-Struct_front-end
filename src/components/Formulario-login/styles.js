@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div `
     
     display: flex;
+    flex-direction: column;
     margin: 5rem;
     width: 21.5rem;
-    height: 29rem;
+    height: 32rem;
 
     h1{
         width: 125px;
@@ -38,7 +39,7 @@ export const Container = styled.div `
     }
 
     @media only screen and (max-width: 768px) {
-        max-width: 50%;
+        max-width: 100%;
         h1{
             font-size: 2rem;
         }
@@ -48,6 +49,7 @@ export const Container = styled.div `
         }
     }
     @media only screen and (max-width: 450px) {
+        max-width: 100%;
         h1{
             font-size: 1.5rem;
         }

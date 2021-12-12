@@ -4,6 +4,8 @@ import ImagemR from "../../components/imagem-responsiva";
 import LoginForm from "../../components/Formulario-login";
 import { api } from "../../services/api"
 import { Container } from "./styles";
+import Button from "../../components/button";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (

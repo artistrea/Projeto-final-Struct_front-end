@@ -23,8 +23,11 @@ const Routes = () => {
             {/* Rota de testes, apagar na versão final */}
             <Route path='/testes' component={Testes} />
             <Route path='/login' component={Login} />
+            
             <Route path='/cadastrar' component={Cadastro} />
-            <Route path='/user' component={User} />
+            {user &&
+                <Route path='/user' component={User} />
+            }
             {/* <Route path='/formPrato' component={} />
             <Route path='/formCategoria' component={} />
             <Route path='/formUsuario' component={} /> */}

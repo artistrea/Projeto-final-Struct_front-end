@@ -40,6 +40,7 @@ const LoginForm = () => {
                     <Button type='submit' text="Entrar" onClick={redirect} />
                 </Link>
             </form>
+            <Link to="/cadastrar"><Button text="Cadastrar"/></Link>
         </Container>
     );
 }

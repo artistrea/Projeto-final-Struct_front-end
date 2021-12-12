@@ -10,4 +10,22 @@ export const Container = styled.div`
     background-position: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    .rightside{
+        
+        display: flex;
+        flex-direction: column;
+        
+        align-content: center;
+        margin: 0 0 1rem 0;
+        
+    }
+    @media only screen and (max-width: 768px) {
+        .rightside{
+            max-width: 50%;
+            height: fit-content;
+        }
+    }
+    @media only screen and (max-width: 450px) {
+        
+    }
 `
