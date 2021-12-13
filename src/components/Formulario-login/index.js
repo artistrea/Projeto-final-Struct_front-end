@@ -1,13 +1,14 @@
 import { Container } from "./styles"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./../button/index";
 import { useUserContext } from "../../context/useUserContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {login} = useUserContext()
+    
 
     return(
         <Container>

@@ -22,7 +22,7 @@ const UserProvider = ({children}) => {
             setUser(response.data);
             Cookie.set('loggedinuser', JSON.stringify(response.data))
         })
-        .catch((response) => {alert("Senha ou usuário incorreto"); return false})
+        .catch((response) => {alert("Senha ou usuário incorreto")})
     }
 
     useEffect(() => {
