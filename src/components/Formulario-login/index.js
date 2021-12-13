@@ -1,19 +1,10 @@
 import { Container } from "./styles"
-import { useState } from "react/cjs/react.development";
-import { userApi } from "../../services/api";
+import { useState } from "react";
 import Button from "./../button/index";
 import { useUserContext } from "../../context/useUserContext";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
-
-    let history = useHistory();
-
-    const redirect = (logado) => {
-        logado &&
-        history.push('/')
-    }
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {login} = useUserContext()
@@ -22,8 +13,8 @@ const LoginForm = () => {
         <Container>
             <form onSubmit={(event) => {
                 event.preventDefault();
-                const logado = login(email, password)
-                redirect(logado) }}>
+                login(email, password)
+                }}>
                 <h1>Email:</h1> 
                 <input 
                     placeholder="email" 
@@ -41,7 +32,7 @@ const LoginForm = () => {
                     onChange={(event) => setPassword(event.target.value)}
                     />
                     <Button type='submit' text="Entrar"/>
-                
+                <Link to="/cadastrar"><Button text="Cadastrar"></Button></Link>
             </form>
         </Container>
     );
