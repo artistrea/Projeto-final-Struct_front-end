@@ -20,6 +20,9 @@ const Info = () => {
                 </div>
                 <Link to="/alterarDados">Alterar meus dados</Link>
                 <a onClick={ (e) => {e.preventDefault(); Cookie.remove("loggedinuser"); setUser(undefined); redirect()} }>Sair</a>
+                {user.is_admin &&
+                    <Link to='/admin'>Página do admin</Link>
+                }
             </Container>
         </>
         

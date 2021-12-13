@@ -30,8 +30,9 @@ const Routes = () => {
                 user &&
                 <Route path='/alterarDados' component={UpdateUser} />
             }
-            
-            <Route path='/cadastrar' component={Cadastro} />
+            {!user &&
+                <Route path='/cadastrar' component={Cadastro} />
+            }
             {user &&
                 <Route path='/user' component={User} />
             }

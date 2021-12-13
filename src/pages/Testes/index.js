@@ -16,6 +16,7 @@ const Testes = () => {
     return (
         <Container>
           <FormPratos />
+          <FormCategorias />
         </Container>
     )
 }
