@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { api } from "../../services/api"
 import { Container } from "./styles"
 
-const AdminPage = () => {
+const PratosAdmin = () => {
 
     const [categories, setCategories] = useState([])
     const [meals, setMeals] = useState([])
@@ -22,11 +22,11 @@ const AdminPage = () => {
 
     return (
         <Container>
-            <AdmSidebar />
-            {/* <GridMeals meals={meals}/>
-            <GridCategories categories={categories}/> */}
+            {/* <AdmSidebar /> */}
+            <GridMeals meals={meals}/>
+            {/* <GridCategories categories={categories}/> */}
         </Container>
     )
 }
 
-export default AdminPage
+export default PratosAdmin

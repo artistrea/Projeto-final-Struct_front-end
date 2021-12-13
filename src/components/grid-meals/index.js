@@ -2,19 +2,28 @@ import { api } from "../../services/api"
 import { Container, Item } from "./styles"
 import EditPencil from "./../../imgs/edit_pencil.jpg"
 import Trash from "./../../imgs/trash.png"
-
+import { useUserContext } from "../../context/useUserContext"
 
 
 const GridMeals = ({meals}) => {
+
+
+    const {user} = useUserContext()
+
     const DeleteCat = async (meal,event) => {
         const confirmacao = prompt(`Digite \"DELETAR\" caso realmente queira deletar o prato ${meal.name}`)
         if (confirmacao === "DELETAR"){
-            await api.delete(`/meals/delete/${meal.id}`)
-                .then((response) => {
-                    alert(response.data)
-                }).catch((error) => {
-                    alert(error.message)
-                })
+            await api.delete(`/meals/delete/${meal.id}`, {
+                headers:{
+                    'X-User-Token': user['authentication_token'],
+                    'X-User-Email': user['email']
+                }
+            }).then((response) => {
+                alert(`O prato ${meal.name} foi deletado`)
+            }).catch((error) => {
+                alert(error.message)
+            })
+                
         }
         else {alert("O prato NÃO foi deletado")}  
     }

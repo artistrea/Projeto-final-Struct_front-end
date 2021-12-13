@@ -10,7 +10,4 @@ export const Container = styled.div`
     .spaceTop {
         padding: 4rem;
     }
-    .footerspace{
-        padding: 15rem 0;
-    }
 `

@@ -7,7 +7,7 @@ export const Container = styled.div `
     display: flex;
     place-content: center;
     flex-wrap: wrap;
-    margin: 11.313rem auto;
+    margin: 0 auto 11rem auto;
     padding: 0 1rem;
     background: #B6A8FF;
     border-radius: 0px 52px 52px 52px;

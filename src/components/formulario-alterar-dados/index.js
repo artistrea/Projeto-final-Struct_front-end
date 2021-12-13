@@ -24,13 +24,13 @@ const UpdateUserForm = () => {
                 <h1>Senha:</h1>                    
                 <input 
                     placeholder="senha" 
-                    type="text"
+                    type="password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value) }
                 />
                 <input 
                     placeholder="confirmar senha" 
-                    type="text"
+                    type="password"
                     value={password_confirmation}
                     onChange={(event) => setPassword_confirmation(event.target.value) }
                 />

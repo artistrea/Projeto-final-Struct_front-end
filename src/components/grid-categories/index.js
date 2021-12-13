@@ -2,19 +2,28 @@ import { api } from "../../services/api"
 import { Container, Item } from "./styles"
 import EditPencil from "./../../imgs/edit_pencil.jpg"
 import Trash from "./../../imgs/trash.png"
+import { useUserContext } from "../../context/useUserContext"
 
 
 
 const GridCategories = ({categories}) => {
+
+    const {user} = useUserContext()
+
     const DeleteCat = async (category,event) => {
         const confirmacao = prompt(`Digite \"DELETAR\" caso realmente queira deletar a categoria ${category.name}`)
         if (confirmacao === "DELETAR"){
-            await api.delete(`/categories/delete/${category.id}`)
-                .then((response) => {
-                    alert(response.data)
-                }).catch((error) => {
-                    alert(error.message)
-                })
+            await api.delete(`/categories/delete/${category.id}`, {
+                headers:{
+                    'X-User-Token': user['authentication_token'],
+                    'X-User-Email': user['email']
+                }
+            }).then((response) => {
+                alert(`A categoria ${category.name} foi deletada`)
+            }).catch((error) => {
+                alert(error.message)
+            })
+               
         }
         else {alert("Categoria NÃO foi deletada")}  
     }

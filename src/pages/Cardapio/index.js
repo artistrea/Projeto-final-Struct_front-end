@@ -1,3 +1,5 @@
+import { Container } from "./styles";
+
 import { useEffect, useState } from "react";
 import { api } from "../../services/api"
 
@@ -38,10 +40,11 @@ const Cardapio = () => {
     
 
     return (
-        <div>
+        <Container>
+          <div class="spaceTop"></div>
           <Filtro categories={categories} setFilterBy={setFilterBy}/>
           <Pratos meals={filteredMeals} />
-        </div>
+        </Container>
     )
 }
 
