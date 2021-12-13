@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api"
-
+import {Pag} from './styles'
 import Filtro from "../../components/filtro-cardapio"
 import { Pratos } from "../../components/pratos"
 import { useUserContext } from "../../context/useUserContext";
@@ -31,10 +31,11 @@ const MeusFavoritos = () => {
     }, [filterBy, favorites])
 
     return (
-        <div>
+        <Pag>
           <Filtro categories={categories} setFilterBy={setFilterBy}/>
           <Pratos meals={filteredMeals} />
-        </div>
+          <div className="footerspace"></div>
+        </Pag>
     )
 }
 

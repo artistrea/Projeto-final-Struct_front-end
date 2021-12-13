@@ -1,19 +1,17 @@
-import Perfil from "../../components/foto-perfil"
-import Info from "../../components/info-usuario"
 import { Container } from "./styles"
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
+import UpdateUserForm from "../../components/formulario-alterar-dados"
 
 
-const User = () => {
+const UpdateUser = () => {
         
 
     return (
         <Container>
-            <Perfil />
-            <Info />
+            <UpdateUserForm />
         </ Container>
     )
 }
 
-export default User
+export default UpdateUser

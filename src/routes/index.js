@@ -7,6 +7,7 @@ import Home from "../pages/Home"
 import Login from "../pages/Login"
 import MeusFavoritos from "../pages/MeusFavoritos"
 import Testes from "../pages/Testes"
+import UpdateUser from "../pages/UpdateUser"
 import User from "../pages/Usuario"
 
 const Routes = () => {
@@ -25,7 +26,10 @@ const Routes = () => {
             {!user &&
                 <Route path='/login' component={Login} />
             }
-            
+            {
+                user &&
+                <Route path='/alterarDados' component={UpdateUser} />
+            }
             
             <Route path='/cadastrar' component={Cadastro} />
             {user &&
@@ -34,8 +38,10 @@ const Routes = () => {
             {/* <Route path='/formPrato' component={} />
             <Route path='/formCategoria' component={} />
             <Route path='/formUsuario' component={} /> */}
-            {user &&
+            {user?
                 <Route path='/meusFavoritos' component={MeusFavoritos} />
+                :
+                <Route path='/meusFavoritos' component={Login} />
             }
             {/* <Route path='/meusFavoritos' component={MeusFavoritos} /> */}
             <Route path='*' component={Home} />

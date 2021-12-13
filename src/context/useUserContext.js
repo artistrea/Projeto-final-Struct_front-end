@@ -34,11 +34,15 @@ const UserProvider = ({children}) => {
 
     const updateUser = async (name, password, password_confirmation) => {
         updateValido(name, password, password_confirmation) &&
-        await userApi.post("/users/update", {
+        await userApi.patch("/users/update", {
             user:{
                 name: name,
                 password: password,
                 password_confirmation: password_confirmation
+            }},{
+            headers:{
+                'X-User-Token': user['authentication_token'],
+                'X-User-Email': user['email']
             }}).then((response) => {alert("Dados atualizados com sucesso"); setUser(response.data) })
             .catch((response) => alert("Ocorreu um erro ao tentar atualizar os dados"))
     }
@@ -125,7 +129,7 @@ const UserProvider = ({children}) => {
     }
 
     return (
-        <UserContext.Provider value={{user, cadastrar, login, updateUser, favorites, addRemoveFavorites}}>
+        <UserContext.Provider value={{user, setUser, cadastrar, login, updateUser, favorites, addRemoveFavorites}}>
             {children}
         </UserContext.Provider>
     );

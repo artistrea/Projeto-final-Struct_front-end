@@ -9,7 +9,7 @@ const UpdateUserForm = () => {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [password_confirmation, setPassword_confirmation] = useState('')
-    const {updateUser} = useUserContext
+    const {updateUser} = useUserContext()
 
     return(
         <Container>
@@ -24,13 +24,13 @@ const UpdateUserForm = () => {
                 <h1>Senha:</h1>                    
                 <input 
                     placeholder="senha" 
-                    type="password"
+                    type="text"
                     value={password}
                     onChange={(event) => setPassword(event.target.value) }
                 />
                 <input 
                     placeholder="confirmar senha" 
-                    type="password"
+                    type="text"
                     value={password_confirmation}
                     onChange={(event) => setPassword_confirmation(event.target.value) }
                 />
