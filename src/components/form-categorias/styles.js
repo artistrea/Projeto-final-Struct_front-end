@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    height: 32rem;
+    height: 50rem;
 
     h1{
         width: 125px;

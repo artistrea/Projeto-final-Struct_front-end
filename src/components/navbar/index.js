@@ -13,7 +13,7 @@ const Navbar = (props) => {
                 <img src={Logo} alt="logo"/>
             </div>
             <div className='nav-middle nav-list'>
-                <Link to="/">Ofertas</Link>
+                <Link to="/">Home</Link>
                 <Link to="/cardapio">Cardápio</Link>
                 <Link to="/meusFavoritos"> Meus Favoritos </ Link>
             </div>

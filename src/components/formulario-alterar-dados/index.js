@@ -9,7 +9,7 @@ const UpdateUserForm = () => {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [password_confirmation, setPassword_confirmation] = useState('')
-    const {updateUser} = useUserContext
+    const {updateUser} = useUserContext()
 
     return(
         <Container>

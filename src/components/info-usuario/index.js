@@ -1,21 +1,28 @@
-import Cookies from "js-cookie"
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
+import Cookie from "js-cookie"
+import { useHistory } from "react-router-dom"
 import { useUserContext } from "../../context/useUserContext"
-import Button from "../button"
+import { Link } from "react-router-dom"
 import { Container, Grid } from "./styles"
-
 
 const Info = () => {
 
-    const {user} = useUserContext()
-
+    const {user, setUser} = useUserContext()
+    const history = useHistory()
+    const redirect = () => {
+        history.push('/login')
+    }
     return (
         <>
             <Container>
-                <p>{user.name}</p>
-                <p>{user.email}</p>
-                {/*<Link to="/formUsuario">Alterar meus dados</Link>*/}
-                <Button text="Sair" />
+                <div>
+                    <p>{user.name}</p>
+                    <p>{user.email}</p>
+                </div>
+                <Link to="/alterarDados">Alterar meus dados</Link>
+                <a onClick={ (e) => {e.preventDefault(); Cookie.remove("loggedinuser"); setUser(undefined); redirect()} }>Sair</a>
+                {user.is_admin &&
+                    <Link to='/admin'>Página do admin</Link>
+                }
             </Container>
         </>
         

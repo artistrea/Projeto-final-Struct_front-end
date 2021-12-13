@@ -3,10 +3,14 @@ import { useUserContext } from "../context/useUserContext"
 import AdminPage from "../pages/AdminPage"
 import Cadastro from "../pages/Cadastro"
 import Cardapio from "../pages/Cardapio"
+import CategoriasAdmin from "../pages/CategoriasAdm"
+import CreateCategory from "../pages/CriarCategoria"
+import CreateMeal from "../pages/CriarPrato"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
 import MeusFavoritos from "../pages/MeusFavoritos"
-import Testes from "../pages/Testes"
+import PratosAdmin from "../pages/PratosAdm"
+import UpdateUser from "../pages/UpdateUser"
 import User from "../pages/Usuario"
 
 const Routes = () => {
@@ -19,20 +23,39 @@ const Routes = () => {
                 user['is_admin'] && 
                 <Route path='/admin' component={AdminPage} />
             }
-            
-            {/* Rota de testes, apagar na versão final */}
-            <Route path='/testes' component={Testes} />
-            <Route path='/login' component={Login} />
-            
-            <Route path='/cadastrar' component={Cadastro} />
+            {   user &&
+                user['is_admin'] && 
+                <Route path='/formPrato' component={CreateMeal} />   
+            }
+            {   user &&
+                user['is_admin'] && 
+                <Route path='/formCategoria' component={CreateCategory} />
+            }
+            {   user &&
+                user['is_admin'] && 
+                <Route path='/admPratos' component={PratosAdmin} />
+            }
+            {   user &&
+                user['is_admin'] && 
+                <Route path='/admCategorias' component={CategoriasAdmin} />
+            }
+            {!user &&
+                <Route path='/login' component={Login} />
+            }
+            {
+                user &&
+                <Route path='/alterarDados' component={UpdateUser} />
+            }
+            {!user &&
+                <Route path='/cadastrar' component={Cadastro} />
+            }
             {user &&
                 <Route path='/user' component={User} />
             }
-            {/* <Route path='/formPrato' component={} />
-            <Route path='/formCategoria' component={} />
-            <Route path='/formUsuario' component={} /> */}
-            {user &&
+            {user?
                 <Route path='/meusFavoritos' component={MeusFavoritos} />
+                :
+                <Route path='/meusFavoritos' component={Login} />
             }
             {/* <Route path='/meusFavoritos' component={MeusFavoritos} /> */}
             <Route path='*' component={Home} />

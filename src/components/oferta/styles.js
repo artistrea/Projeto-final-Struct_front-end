@@ -26,7 +26,7 @@ export const Container = styled.div`
     @media only screen and (max-width: 480px) {
         margin: 1.5rem;
         width: 21.688rem;
-        height: 16rem;
+        height: 20rem;
 
         img{
             height: 10rem;

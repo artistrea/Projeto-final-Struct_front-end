@@ -2,9 +2,11 @@ import { useState } from "react"
 import { Container } from "./styles"
 import { api } from "../../services/api"
 import Button from "../button"
+import { useUserContext } from "../../context/useUserContext"
 
 const FormPratos = () => {
 
+    const {user} = useUserContext()
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
@@ -13,16 +15,20 @@ const FormPratos = () => {
 
     const addMeal = async (event) => {
         event.preventDefault()
-    await api.post('meals/create', {
+    await api.post('/meals/create', {
         meal: {
             name: name,
             description: description,
             price: price,
-            category: category
-        }
-    }).then((response) => {
+            category_id: category
+        }},{
+        headers:{
+            'X-User-Token': user['authentication_token'],
+            'X-User-Email': user['email']
+        }}
+        ).then((response) => {
         alert("O prato foi criado com sucesso")
-    }).catch((erro) => {
+        }).catch((erro) => {
         alert("Ocorreu um erro")
     })
     }
@@ -48,7 +54,7 @@ const FormPratos = () => {
                     onChange={(event) => setPrice(event.target.value)}
                 />
                 <input
-                    placeholder="categoria"
+                    placeholder="id da categoria"
                     value={category}
                     onChange={(event) => setCategory(event.target.value)}
                 />
